@@ -13,6 +13,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { Storage, IonicStorageModule } from '@ionic/storage';
 import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
 
+import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
+const socket_config: SocketIoConfig = { 
+  url: 'http://localhost:3000/login', options: {} 
+};
+
 export function jwtOptionsFactory(storage) {
   return {
     tokenGetter: () => {
@@ -27,6 +32,7 @@ export function jwtOptionsFactory(storage) {
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     HttpClientModule,
+    SocketIoModule.forRoot(socket_config),
     IonicStorageModule.forRoot(),
     JwtModule.forRoot({
       jwtOptionsProvider: {

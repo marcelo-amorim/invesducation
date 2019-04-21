@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
+import { Socket } from 'ng-socket-io';
+
  
 @Component({
   selector: 'app-login',
@@ -11,13 +13,14 @@ export class LoginPage implements OnInit {
  
   credentialsForm: FormGroup;
  
-  constructor(private formBuilder: FormBuilder, private authService: AuthService) { }
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private socket: Socket) { }
  
   ngOnInit() {
     this.credentialsForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
+    this.socket.connect();
   }
  
   onSubmit() {
