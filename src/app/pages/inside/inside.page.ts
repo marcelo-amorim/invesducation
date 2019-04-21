@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { ToastController } from '@ionic/angular';
 import { Socket } from 'ng-socket-io';
-import { Observable } from 'rxjs/Observable';
+import * as moment from 'moment';
  
 @Component({
   selector: 'app-inside',
@@ -12,7 +12,9 @@ import { Observable } from 'rxjs/Observable';
 })
 export class InsidePage implements OnInit {
  
-  data = '';
+  private data = '';
+  private formatted_time : String;
+  private show_timer = false;
  
   constructor(private authService: AuthService, private storage: Storage, private toastController: ToastController, private socket: Socket) { }
  
@@ -40,38 +42,25 @@ export class InsidePage implements OnInit {
     toast.then(toast => toast.present());
   }
 
-  loadTimer() {
-    console.log('click')
-    console.log(this.socket)
+  startTimer() {
     this.socket.connect();
-    console.log(this.socket)
-    this.socket.emit('init_timer');
+    this.socket.emit('start_timer');
     this.socket.on('timer', (data) => {
-      console.log(data)
-      this.data = data['time'];
+
+      this.formatted_time = moment().format('LTS');
     });
-    // let observable = new Observable(observer => {
-    //   this.socket.on('timer', (data) => {
-    //     console.log('b' + data)
-    //     observer.next(data);
-    //     console.log('a' + data)
-    //   });
-    // })
-    // return observable;
-    // this.socket.connect();
-    // this.socket.emit('init_timer');
-    // this.socket.on('timer', function(data){
-    //   console.log(data);
-    //   this.data = data;
-    // });
-    // const socket = socketIo(environment.socket_url, {
-    //   transports: ['websocket']
-    // });
-    // socket.on('timer', (data) =>
-    //   console.log(data)
-      // this.data = String(data);
-    // )
-    
+  }
+
+  stopTimer() {
+    this.socket.emit('stop_timer');
+  }
+
+  toggleTimer() {
+    if (this.show_timer){
+      this.startTimer();
+    }else{
+      this.stopTimer();
+    }
   }
  
 }
