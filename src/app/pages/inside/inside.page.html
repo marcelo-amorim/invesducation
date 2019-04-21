@@ -5,12 +5,13 @@
 </ion-header>
  
 <ion-content padding>
-  Welcome to the members only area!
+  Bem vindo a tela de administradores!
  
   <p>{{ data }}</p>
- 
-  <ion-button expand="full" (click)="loadSpecialInfo()">Load Special Info</ion-button>
+
+  <ion-button expand="full" (click)="loadTimer()">Iniciar relógio</ion-button>
+  <ion-button expand="full" (click)="loadSpecialInfo()">Carregar informações</ion-button>
   <ion-button expand="full" (click)="logout()">Logout</ion-button>
-  <ion-button expand="full" (click)="clearToken()">Clear JWT</ion-button>
+  <ion-button expand="full" (click)="clearToken()">Limpar JWT</ion-button>
  
 </ion-content>

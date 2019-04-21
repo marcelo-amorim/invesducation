@@ -15,7 +15,7 @@ import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
 
 import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
 const socket_config: SocketIoConfig = { 
-  url: 'http://localhost:3000/login', options: {} 
+  url: 'http://localhost:5000', options: {} 
 };
 
 export function jwtOptionsFactory(storage) {
