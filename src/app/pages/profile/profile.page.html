@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button text="Voltar"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Invesducation</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">Sair</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label position="stacked"> Nome</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked"> Nome de usuário</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked"> Data de nascimento</ion-label>
+    <ion-datetime displayFormat="DD MMM YYYY" [monthShortNames]="customNames" cancelText="Cancelar" doneText="Confirmar" placeholder="Selecione a data"></ion-datetime> 
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked"> Profissão</ion-label>
+    <ion-select value="Selecione" cancelText="Nah" okText="Okay!">
+      <ion-select-option value="analista-de-sistemas">Analista de Sistemas</ion-select-option>
+      <ion-select-option value="professor">Professor</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked"> Grau de instrução</ion-label>
+    <ion-select value="Selecione" cancelText="Nah" okText="Okay!">
+      <ion-select-option value="brown">Brown</ion-select-option>
+      <ion-select-option value="blonde">Blonde</ion-select-option>
+      <ion-select-option value="black">Black</ion-select-option>
+      <ion-select-option value="red">Red</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <br><br>
+  <ion-button routerLink="/guide" expand="block" class="signin" color="secondary">Salvar</ion-button>
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="profile" routerLink="/profile">
+        <ion-icon name="person"></ion-icon>
+        <ion-label>Perfil</ion-label>
+        <ion-badge>6</ion-badge>
+      </ion-tab-button>
+
+      <ion-tab-button tab="inside" routerLink="/inside">
+        <ion-icon name="home"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="settings">
+        <ion-icon name="settings"></ion-icon>
+        <ion-label>Configurações</ion-label>
+      </ion-tab-button>
+
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>

@@ -10,6 +10,7 @@ const routes: Routes = [
     loadChildren: './pages/inside/inside.module#InsidePageModule',
     canActivate: [AuthGuardService]
   },
+  {path: 'profile', loadChildren: './pages/profile/profile.module#ProfilePageModule'},
 ];
 
 @NgModule({

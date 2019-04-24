@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title routerLink="/home">Fintech</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-slides pager="true" [options]="slideOpts">
+	  <ion-slide class="slide">
+	  	<ion-card>
+		  <ion-card-header>
+		    <ion-img class="guide" src="./assets/img/info-1.png"></ion-img>     
+		    <ion-card-title>Comece com pouco</ion-card-title>
+		  </ion-card-header>
+
+		  <ion-card-content>
+		    Sabia que não precisa ser rico pra começar a investir? Vem com a gente que te explicamos!
+		  </ion-card-content>
+		 </ion-card>
+	  </ion-slide>
+	  <ion-slide>
+	    <ion-card>
+		  <ion-card-header>
+		    <ion-img class="guide" src="./assets/img/info-2.png"></ion-img>
+		    <ion-card-title>Aprenda a investir</ion-card-title>
+		  </ion-card-header>
+
+		  <ion-card-content>
+		    No @nomedojogo você vai aprender a investir se divertindo, simulando com informações que refletem a realidade do mercado de investimentos e da sua vida!
+		  </ion-card-content>
+		</ion-card>
+	  </ion-slide>
+	  <ion-slide>
+	    <ion-card>
+		  <ion-card-header>
+		    <ion-img class="guide" src="./assets/img/info-3.png"></ion-img>
+		    <ion-card-title>Seja um acionista</ion-card-title>
+		  </ion-card-header>
+
+		  <ion-card-content>
+		    Aqui você terá oportunidade de aprender como funciona a Bolsa de Valores, sem precisar colocar dinheiro de verdade em jogo. Comece já!
+		  </ion-card-content>
+		 </ion-card>
+	  </ion-slide>
+	</ion-slides>
+	<ion-row padding  class="right">
+		<ion-button routerLink="/profile" class="start" color="secondary">Começar</ion-button>
+ 	</ion-row>
+</ion-content>
