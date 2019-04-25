@@ -1,16 +1,22 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title routerLink="/home">Fintech</ion-title>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="arrow-back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Invesducation</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()"><ion-icon name="log-out"></ion-icon></ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="guide-page">
 	<ion-slides pager="true" [options]="slideOpts">
 	  <ion-slide class="slide">
 	  	<ion-card>
 		  <ion-card-header>
 		    <ion-img class="guide" src="./assets/img/info-1.png"></ion-img>     
-		    <ion-card-title>Comece com pouco</ion-card-title>
+		    <ion-card-title>Bem vindo!</ion-card-title>
 		  </ion-card-header>
 
 		  <ion-card-content>
@@ -22,7 +28,7 @@
 	    <ion-card>
 		  <ion-card-header>
 		    <ion-img class="guide" src="./assets/img/info-2.png"></ion-img>
-		    <ion-card-title>Aprenda a investir</ion-card-title>
+		    <ion-card-title>Problema</ion-card-title>
 		  </ion-card-header>
 
 		  <ion-card-content>
@@ -34,7 +40,7 @@
 	    <ion-card>
 		  <ion-card-header>
 		    <ion-img class="guide" src="./assets/img/info-3.png"></ion-img>
-		    <ion-card-title>Seja um acionista</ion-card-title>
+		    <ion-card-title>Solução</ion-card-title>
 		  </ion-card-header>
 
 		  <ion-card-content>

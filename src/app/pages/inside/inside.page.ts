@@ -4,7 +4,7 @@ import { Storage } from '@ionic/storage';
 import { ToastController } from '@ionic/angular';
 import { Socket } from 'ng-socket-io';
 import * as moment from 'moment';
-import { MenuController } from '@ionic/angular';
+
  
 @Component({
   selector: 'app-inside',
@@ -17,12 +17,7 @@ export class InsidePage implements OnInit {
   private formatted_time : String;
   private show_timer = false;
  
-  constructor(private authService: AuthService, private storage: Storage, private toastController: ToastController, private socket: Socket, private menu: MenuController) { }
-
-  openFirst() {
-    this.menu.enable(true, 'first');
-    this.menu.open('first');
-  }
+  constructor(private authService: AuthService, private storage: Storage, private toastController: ToastController, private socket: Socket) { }
  
   ngOnInit() {
   }

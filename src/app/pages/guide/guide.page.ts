@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './../../services/auth.service';
 
 @Component({
   selector: 'app-guide',
@@ -11,5 +12,9 @@ export class GuidePage {
 	  initialSlide: 1,
 	  speed: 400
 	};
-	constructor() {}
+	constructor(private authService: AuthService) {}
+
+	logout() {
+	    this.authService.logout();
+	}
 }

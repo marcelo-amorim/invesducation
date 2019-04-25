@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './../../services/auth.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,5 +8,11 @@ import { Component } from '@angular/core';
 })
 
 export class ProfilePage {
+	constructor(private authService: AuthService){}
+	
 	customNames = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
+
+	logout() {
+	    this.authService.logout();
+	}
 }
