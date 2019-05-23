@@ -29,7 +29,7 @@ export class AppComponent {
       this.authService.authenticationState.subscribe(state => {
         if (state) {
           let user = this.authService.user;
-          this.router.navigate(['guide']);
+          this.router.navigate(['inside']);
         } else {
           this.router.navigate(['login']);
         }

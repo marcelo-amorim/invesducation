@@ -3,52 +3,60 @@
     <ion-buttons slot="start">
       <ion-back-button text="" icon="arrow-back"></ion-back-button>
     </ion-buttons>
-    <ion-title>Invesducation</ion-title>
+    <ion-title>Traders Trail</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="logout()"><ion-icon name="log-out"></ion-icon></ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  
+<ion-content padding>       
+  <ion-thumbnail>
+    <ion-img src="../../assets/img/play-1.png"></ion-img>
+  </ion-thumbnail>
+  <ion-button routerLink="/profile" color="secondary">Tesouro Direto</ion-button>
 
-  <ion-item>
-    <ion-chip slot="start">
+  <ion-thumbnail>
+    <ion-img src="../../assets/img/play-2-off.png"></ion-img>
+  </ion-thumbnail>
+  <ion-button routerLink="/profile" color="medium" disabled>CDB</ion-button>
+
+  <ion-thumbnail>
+    <ion-img src="../../assets/img/play-3-off.png"></ion-img>
+  </ion-thumbnail>
+  <ion-button routerLink="/profile" color="medium" disabled>LCI/LCA</ion-button>
+</ion-content>
+   
+    <!--ion-chip slot="start">
       <ion-avatar>
         <img src="./assets/img/avatar.png">
       </ion-avatar>
       <ion-label>andyalves</ion-label>
-    </ion-chip>
-
-    <ion-toggle [(ngModel)]="show_timer" (ionChange)="toggleTimer()" slot="end"></ion-toggle>
+    </ion-chip-->
+  
+    <!--ion-toggle [(ngModel)]="show_timer" (ionChange)="toggleTimer()" slot="end"></ion-toggle>
     <p *ngIf="show_timer"> {{ formatted_time }} </p>
-    <!--p> {{ data }} </p-->
-  </ion-item>
+    <> {{ data }} </p-->
   
-  
-  
-  <!--ion-button expand="full" (click)="loadSpecialInfo()">Carregar informações</ion-button>
-  <ion-button expand="full" (click)="clearToken()">Limpar JWT</ion-button-->
-  
+    <!--ion-button expand="full" (click)="loadSpecialInfo()">Carregar informações</ion-button>
+    <ion-button expand="full" (click)="clearToken()">Limpar JWT</ion-button-->
+
   <ion-tabs>
     <ion-tab-bar slot="bottom">
       <ion-tab-button tab="profile" routerLink="/profile">
         <ion-icon name="person"></ion-icon>
         <ion-label>Perfil</ion-label>
-        <ion-badge>6</ion-badge>
       </ion-tab-button>
 
-      <ion-tab-button tab="inside" routerLink="/inside">
-        <ion-icon name="home"></ion-icon>
-        <ion-label>Home</ion-label>
+      <ion-tab-button tab="inside" routerLink="/inside" class="trilha">
+        <ion-icon name="logo-game-controller-b"></ion-icon>
+        <ion-label>Trilha</ion-label>
       </ion-tab-button>
 
-      <ion-tab-button tab="settings">
-        <ion-icon name="settings"></ion-icon>
-        <ion-label>Configurações</ion-label>
+      <ion-tab-button tab="carteira">
+        <ion-icon name="wallet"></ion-icon>
+        <ion-label>Carteira</ion-label>
       </ion-tab-button>
 
     </ion-tab-bar>
   </ion-tabs>
-</ion-content>

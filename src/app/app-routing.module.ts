@@ -12,11 +12,13 @@ const routes: Routes = [
   },
   {
     path: 'profile', 
-    loadChildren: './pages/profile/profile.module#ProfilePageModule'
+    loadChildren: './pages/profile/profile.module#ProfilePageModule',
+    canActivate: [AuthGuardService]
   },
   {
     path: 'guide',
-    loadChildren: './pages/guide/guide.module#GuidePageModule'
+    loadChildren: './pages/guide/guide.module#GuidePageModule',
+    canActivate: [AuthGuardService]
   },
 ];
 

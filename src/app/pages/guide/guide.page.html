@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button text="" icon="arrow-back"></ion-back-button>
     </ion-buttons>
-    <ion-title>Invesducation</ion-title>
+    <ion-title>Traders Trail</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="logout()"><ion-icon name="log-out"></ion-icon></ion-button>
     </ion-buttons>
@@ -12,6 +12,8 @@
 
 <ion-content class="guide-page">
 	<ion-slides pager="true" [options]="slideOpts">
+		<ion-slide class="slide">
+		</ion-slide>
 	  <ion-slide class="slide">
 	  	<ion-card>
 		  <ion-card-header>
@@ -20,7 +22,7 @@
 		  </ion-card-header>
 
 		  <ion-card-content>
-		    Sabia que não precisa ser rico pra começar a investir? Vem com a gente que te explicamos!
+		    Sabia que não precisa ser rico pra começar a investir? Vem com a Flipper que no caminho a gente te explica!
 		  </ion-card-content>
 		 </ion-card>
 	  </ion-slide>
@@ -28,11 +30,11 @@
 	    <ion-card>
 		  <ion-card-header>
 		    <ion-img class="guide" src="./assets/img/info-2.png"></ion-img>
-		    <ion-card-title>Problema</ion-card-title>
+		    <ion-card-title>Simulação</ion-card-title>
 		  </ion-card-header>
 
 		  <ion-card-content>
-		    No @nomedojogo você vai aprender a investir se divertindo, simulando com informações que refletem a realidade do mercado de investimentos e da sua vida!
+		    No Traders Trail você vai aprender a investir se divertindo, simulando com informações que refletem a realidade do mercado de investimentos e da sua vida!
 		  </ion-card-content>
 		</ion-card>
 	  </ion-slide>
@@ -40,7 +42,7 @@
 	    <ion-card>
 		  <ion-card-header>
 		    <ion-img class="guide" src="./assets/img/info-3.png"></ion-img>
-		    <ion-card-title>Solução</ion-card-title>
+		    <ion-card-title>Bolsa de Valores</ion-card-title>
 		  </ion-card-header>
 
 		  <ion-card-content>
@@ -50,6 +52,6 @@
 	  </ion-slide>
 	</ion-slides>
 	<ion-row padding  class="right">
-		<ion-button routerLink="/profile" class="start" color="secondary">Começar</ion-button>
+		<ion-button routerLink="/inside" class="start" color="secondary">Começar</ion-button>
  	</ion-row>
 </ion-content>
