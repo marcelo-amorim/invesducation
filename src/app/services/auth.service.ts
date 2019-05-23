@@ -54,6 +54,7 @@ export class AuthService {
     return this.http.post(`${this.url}/api/login`, credentials)
       .pipe(
         tap(res => {
+          console.log(res);
           this.storage.set(TOKEN_KEY, res['token']);
           this.user = this.helper.decodeToken(res['token']);
           this.authenticationState.next(true);
@@ -70,13 +71,26 @@ export class AuthService {
       this.authenticationState.next(false);
     });
   }
+
+  getProfile(user) {
+    return this.http.post(`${this.url}/api/profile`, user).pipe(
+      catchError(e => {
+        let status = e.status;
+        if (status === 401) {
+          this.showAlert('Acesso não autorizado!');
+          this.logout();
+        }
+        throw new Error(e);
+      })
+    )
+  }
  
   getSpecialData() {
     return this.http.get(`${this.url}/api/special`).pipe(
       catchError(e => {
         let status = e.status;
         if (status === 401) {
-          this.showAlert('You are not authorized for this!');
+          this.showAlert('Acesso não autorizado!');
           this.logout();
         }
         throw new Error(e);
