@@ -25,11 +25,17 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
- 
       this.authService.authenticationState.subscribe(state => {
+        console.log(state);
         if (state) {
           let user = this.authService.user;
+<<<<<<< HEAD
           this.router.navigate(['inside']);
+=======
+          console.log(user);
+          let profile = this.authService.getProfile(user);
+          this.router.navigate(['tabs']);
+>>>>>>> master
         } else {
           this.router.navigate(['login']);
         }
