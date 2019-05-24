@@ -21,6 +21,7 @@ const routes: Routes = [
   { path: 'tab1', loadChildren: './pages/tab1/tab1.module#Tab1PageModule' , canActivate: [AuthGuardService]},
   { path: 'tab2', loadChildren: './pages/tab2/tab2.module#Tab2PageModule' , canActivate: [AuthGuardService]},
   { path: 'tab3', loadChildren: './pages/tab3/tab3.module#Tab3PageModule' , canActivate: [AuthGuardService]},
+  { path: 'tesouro-direto', loadChildren: './pages/tesouro-direto/tesouro-direto.module#TesouroDiretoPageModule' , canActivate: [AuthGuardService]},
   
 ];
 

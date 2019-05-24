@@ -1,0 +1,110 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="arrow-back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Tesouro Direto</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()"><ion-icon name="log-out"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="tesouro-direto">
+	<ion-slides pager="true" [options]="slideOpts">
+    <ion-slide>
+      <ion-card>
+          <ion-card-header>
+            <ion-card-title>Afinal, o que é Tesouro Direto?</ion-card-title>
+            <ion-card-subtitle>Vamos te explicar...</ion-card-subtitle>
+          </ion-card-header>
+        
+          <ion-card-content>
+            
+            <ion-img src="../../assets/img/tesouro-direto.jpg"></ion-img>
+            
+            Keep close to Nature's heart... and break clear away, once in awhile,
+            and climb a mountain or spend a week in the woods. Wash your spirit clean.
+          </ion-card-content>
+        </ion-card>
+    </ion-slide>
+	  <ion-slide class="slide">
+	  	<ion-card>
+        <ion-card-header>
+            <ion-card-title>Pergunta 1</ion-card-title>
+            <ion-card-subtitle>Essa pergunta vale R$100 pra sua carteira de investimento</ion-card-subtitle>
+        </ion-card-header>
+      
+        <ion-card-content>
+          Keep close to Nature's heart... and break clear away, once in awhile,
+          and climb a mountain or spend a week in the woods. Wash your spirit clean.
+        </ion-card-content>
+          
+        <ion-item href="#" class="activated">
+          <ion-label>a) Lorem ipsum</ion-label>
+        </ion-item>
+      
+        <ion-item href="#">
+          <ion-label>b) Lorem ipsum</ion-label>
+        </ion-item>
+      
+        <ion-item href="#" class="activated">
+          <ion-label>c) Lorem ipsum</ion-label>
+        </ion-item>
+    
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+        <ion-card>
+            <ion-card-header>
+                <ion-card-title>Vamos aprender mais?</ion-card-title>
+                <ion-card-subtitle>Veja o vídeo e aprenda mais de uma forma bem fácil e divertida</ion-card-subtitle>
+            </ion-card-header>
+          
+            <ion-card-content>
+              Keep close to Nature's heart... and break clear away, once in awhile,
+              and climb a mountain or spend a week in the woods. Wash your spirit clean.
+            </ion-card-content>
+          </ion-card>
+      </ion-slide>
+    <ion-slide>
+      <ion-card>
+          <ion-card-header>
+              <ion-card-title>Na prática</ion-card-title>
+              <ion-card-subtitle>Vamos simular um investimento no Tesouro Direto?</ion-card-subtitle>
+          </ion-card-header>
+        
+          <ion-card-content>
+            Keep close to Nature's heart... and break clear away, once in awhile,
+            and climb a mountain or spend a week in the woods. Wash your spirit clean.
+          </ion-card-content>
+        </ion-card>
+    </ion-slide>
+    <ion-slide class="slide">
+      <ion-card>
+        <ion-card-header>
+            <ion-card-title>Pergunta 2</ion-card-title>
+            <ion-card-subtitle>Essa pergunta vale R$200 pra sua carteira de investimento</ion-card-subtitle>
+        </ion-card-header>
+      
+        <ion-card-content>
+          Keep close to Nature's heart... and break clear away, once in awhile,
+          and climb a mountain or spend a week in the woods. Wash your spirit clean.
+        </ion-card-content>
+          
+        <ion-item href="#" class="activated">
+          <ion-label>a) Lorem ipsum</ion-label>
+        </ion-item>
+      
+        <ion-item href="#">
+          <ion-label>b) Lorem ipsum</ion-label>
+        </ion-item>
+      
+        <ion-item href="#" class="activated">
+          <ion-label>c) Lorem ipsum</ion-label>
+        </ion-item>
+    
+      </ion-card>
+    </ion-slide>
+	</ion-slides>
+</ion-content>

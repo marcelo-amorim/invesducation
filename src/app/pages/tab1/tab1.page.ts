@@ -5,19 +5,19 @@ const data = [
   {
     id: '1',
     title: 'Tesouro Direto',
-    subtitle: 'Aprenda a sobre Tesouro Direto',
+    subtitle: 'Vamos aprender!',
     thumbnail: '../../assets/img/play-1.png',
   },
   {
     id: '2',
     title: 'CDB',
-    subtitle: 'Aprenda a sobre CDB',
+    subtitle: 'Vamos aprender!',
     thumbnail: '../../assets/img/play-2-off.png',
   },
   {
     id: '3',
     title: 'LCI/LCA',
-    subtitle: 'Aprenda a sobre LCI/LCA',
+    subtitle: 'Vamos aprender!',
     thumbnail: '../../assets/img/play-3-off.png',
   }
   ];
