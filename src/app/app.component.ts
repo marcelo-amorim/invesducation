@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AuthService } from './services/auth.service';
 import { Router } from '@angular/router';
+import { ProfileService } from './services/profile/profile.service';
  
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private authService: AuthService,
+    private profileService: ProfileService,
     private router: Router
   ) {
     this.initializeApp();
@@ -26,12 +28,15 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
       this.authService.authenticationState.subscribe(state => {
-        console.log(state);
         if (state) {
           let user = this.authService.user;
-          console.log(user);
-          let profile = this.authService.getProfile(user);
-          this.router.navigate(['tabs']);
+          this.profileService.getProfile(user).subscribe(profile =>{
+            if (profile == null){
+              this.router.navigate(['guide']);
+            }else{
+              this.router.navigate(['tabs']);
+            }
+          });
         } else {
           this.router.navigate(['login']);
         }

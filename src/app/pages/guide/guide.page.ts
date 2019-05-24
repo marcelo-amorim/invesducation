@@ -9,7 +9,7 @@ import { AuthService } from './../../services/auth.service';
 
 export class GuidePage {
 	slideOpts = {
-	  initialSlide: 1,
+	  initialSlide: 0,
 	  speed: 400
 	};
 	constructor(private authService: AuthService) {}

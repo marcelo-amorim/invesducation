@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
+import { Storage } from '@ionic/storage';
+import { AuthService } from 'src/app/services/auth.service';
+
 
 @Component({
   selector: 'app-tab2',
@@ -8,9 +10,21 @@ import { AuthService } from '../../services/auth.service';
 })
 export class Tab2Page implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  private profile = null;
+
+  constructor(
+    private storage: Storage,
+    private authService: AuthService
+  ) {
+    
+   }
 
   ngOnInit() {
+    this.storage.get('profile').then((val) =>{
+      console.log(this.profile);
+      this.profile = val;
+    });
+    
   }
 
   logout() {

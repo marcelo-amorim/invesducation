@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Storage } from '@ionic/storage';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 import { tap, catchError } from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs';
  
@@ -12,9 +12,10 @@ const TOKEN_KEY = 'access_token';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class ProfileService {
  
   url = environment.url;
+  profile = null;
   user = null;
   authenticationState = new BehaviorSubject(false);
  
@@ -41,29 +42,18 @@ export class AuthService {
     });
   }
  
-  register(credentials) {
-    return this.http.post(`${this.url}/api/register`, credentials).pipe(
+  register(usernameForm) {
+    let formData = {username: usernameForm.username, user_id: this.user.id}
+    return this.http.post(`${this.url}/api/profile/criar`, formData).pipe(
+      tap(res => {
+        console.log(res);
+        this.storage.set('profile', res);
+      }),
       catchError(e => {
         this.showAlert(e.error.msg);
         throw new Error(e);
       })
     );
-  }
- 
-  login(credentials) {
-    return this.http.post(`${this.url}/api/login`, credentials)
-      .pipe(
-        tap(res => {
-          console.log(res);
-          this.storage.set(TOKEN_KEY, res['token']);
-          this.user = this.helper.decodeToken(res['token']);
-          this.authenticationState.next(true);
-        }),
-        catchError(e => {
-          this.showAlert(e.error.msg);
-          throw new Error(e);
-        })
-      );
   }
  
   logout() {
@@ -73,10 +63,8 @@ export class AuthService {
   }
 
   getProfile(user) {
-    console.log(user);
-    return this.http.post(`${this.url}/api/profile`, user).pipe(
+    return this.http.post(`${this.url}/api/profile/buscar`, user).pipe(
       tap(res => {
-        console.log(res);
         this.storage.set('profile', res);
         // this.user = this.helper.decodeToken(res['token']);
         // this.authenticationState.next(true);
@@ -90,23 +78,6 @@ export class AuthService {
         throw new Error(e);
       })
     )
-  }
- 
-  getSpecialData() {
-    return this.http.get(`${this.url}/api/special`).pipe(
-      catchError(e => {
-        let status = e.status;
-        if (status === 401) {
-          this.showAlert('Acesso não autorizado!');
-          this.logout();
-        }
-        throw new Error(e);
-      })
-    )
-  }
- 
-  isAuthenticated() {
-    return this.authenticationState.value;
   }
  
   showAlert(msg) {

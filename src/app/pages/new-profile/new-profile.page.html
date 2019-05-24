@@ -1,0 +1,21 @@
+<ion-content  color="primary">
+  <form  [formGroup]="usernameForm" (ngSubmit)="register()">
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <h3>Escolha um apelido!</h3>
+          </div>
+          <div padding>
+            <ion-item>
+              <ion-input formControlName="username"  type="text" placeholder="Digite um apelido bem maneiro (mín. 4 caracteres)" required></ion-input>
+            </ion-item>
+          </div>
+          <div padding>
+            <ion-button  size="large" type="button" [disabled]="!usernameForm.valid" expand="block" (click)="register()">Pronto!</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
