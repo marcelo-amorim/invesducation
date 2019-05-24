@@ -21,8 +21,8 @@ export class Tab2Page implements OnInit {
 
   ngOnInit() {
     this.storage.get('profile').then((val) =>{
-      console.log(this.profile);
       this.profile = val;
+      console.log(this.profile);
     });
     
   }

@@ -29,7 +29,7 @@
         </ion-card-header>
         <ion-img class="thumbnail-trilha" [src]="a.thumbnail"></ion-img>
         <ion-card-content>
-            <ion-button color="success" class="button" routerLink="/tesouro-direto">Iniciar Trilha</ion-button>
+            <ion-button color="success" class="button" routerLink="{{a.routerLink}}" [disabled]="!a.enabled">Iniciar Trilha</ion-button>
         <!-- <p>{{ a.text }} <ion-icon name="arrow-forward"></ion-icon></p> -->
         </ion-card-content>
       </ion-card>

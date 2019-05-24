@@ -7,18 +7,24 @@ const data = [
     title: 'Tesouro Direto',
     subtitle: 'Vamos aprender!',
     thumbnail: '../../assets/img/play-1.png',
+    routerLink: '/tesouro-direto',
+    enabled: true
   },
   {
     id: '2',
     title: 'CDB',
     subtitle: 'Vamos aprender!',
     thumbnail: '../../assets/img/play-2-off.png',
+    routerLink: '',
+    enabled: false
   },
   {
     id: '3',
     title: 'LCI/LCA',
     subtitle: 'Vamos aprender!',
     thumbnail: '../../assets/img/play-3-off.png',
+    routerLink: '',
+    enabled: false
   }
   ];
 
