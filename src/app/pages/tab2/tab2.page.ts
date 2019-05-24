@@ -16,14 +16,15 @@ export class Tab2Page implements OnInit {
     private storage: Storage,
     private authService: AuthService
   ) {
-    
+    this.storage.get('profile').then((val) =>{
+      this.profile = val;
+      this.profile.carteira = this.profile.carteira.toFixed(2)
+      console.log(this.profile);
+    });
    }
 
   ngOnInit() {
-    this.storage.get('profile').then((val) =>{
-      this.profile = val;
-      console.log(this.profile);
-    });
+    
     
   }
 

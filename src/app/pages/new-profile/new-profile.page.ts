@@ -22,10 +22,8 @@ export class NewProfilePage implements OnInit {
   }
 
   ngOnInit() {
-    var username  = (this.profile != null ? this.profile.username : '');
-    console.log(this.profile);
     this.usernameForm = this.formBuilder.group({
-      username: ['', [Validators.required, Validators.minLength(6)]]
+      username: ['', [Validators.required, Validators.minLength(4)]]
     });
 
   }

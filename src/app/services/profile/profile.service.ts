@@ -6,6 +6,7 @@ import { Storage } from '@ionic/storage';
 import { environment } from '../../../environments/environment';
 import { tap, catchError } from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs';
+import { Router } from '@angular/router';
  
 const TOKEN_KEY = 'access_token';
  
@@ -19,8 +20,14 @@ export class ProfileService {
   user = null;
   authenticationState = new BehaviorSubject(false);
  
-  constructor(private http: HttpClient, private helper: JwtHelperService, private storage: Storage,
-    private plt: Platform, private alertController: AlertController) {
+  constructor(
+    private http: HttpClient,
+    private helper: JwtHelperService,
+    private storage: Storage,
+    private plt: Platform, 
+    private alertController: AlertController,
+    private router: Router
+    ) {
     this.plt.ready().then(() => {
       this.checkToken();
     });
@@ -46,8 +53,8 @@ export class ProfileService {
     let formData = {username: usernameForm.username, user_id: this.user.id}
     return this.http.post(`${this.url}/api/profile/criar`, formData).pipe(
       tap(res => {
-        console.log(res);
         this.storage.set('profile', res);
+        this.router.navigate(['tabs']);
       }),
       catchError(e => {
         this.showAlert(e.error.msg);
