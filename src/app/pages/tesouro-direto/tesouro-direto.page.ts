@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 
 const data = [
@@ -18,7 +19,7 @@ const data = [
 export class TesouroDiretoPage implements OnInit {
   trilhas: any =[];
 
-  constructor() { }
+  constructor(public alertController: AlertController) { }
 
   ngOnInit() {
     this.trilhas = data;
@@ -26,6 +27,15 @@ export class TesouroDiretoPage implements OnInit {
 
   openTrilha(index: number) {
     console.log('TODO');
+  }
+
+  showAlert(msg, hdr) {
+    let alert = this.alertController.create({
+      message: msg,
+      header: hdr,
+      buttons: ['OK']
+    });
+    alert.then(alert => alert.present());
   }
 
 }

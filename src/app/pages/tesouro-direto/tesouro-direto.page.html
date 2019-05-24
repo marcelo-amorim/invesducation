@@ -15,41 +15,44 @@
     <ion-slide>
       <ion-card>
           <ion-card-header>
-            <ion-card-title>Afinal, o que é Tesouro Direto?</ion-card-title>
-            <ion-card-subtitle>Vamos te explicar...</ion-card-subtitle>
+              <ion-card-title>Afinal, o que é Tesouro Direto?</ion-card-title>
+              <ion-card-subtitle>Veja o vídeo e aprenda mais de uma forma bem fácil e divertida</ion-card-subtitle>
           </ion-card-header>
         
           <ion-card-content>
-            
-            <ion-img src="../../assets/img/tesouro-direto.jpg"></ion-img>
-            
-            Keep close to Nature's heart... and break clear away, once in awhile,
-            and climb a mountain or spend a week in the woods. Wash your spirit clean.
+              <iframe width="100%" height="150" src="https://www.youtube.com/embed/SH1952jTfZ8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </ion-card-content>
         </ion-card>
     </ion-slide>
 	  <ion-slide class="slide">
 	  	<ion-card>
         <ion-card-header>
-            <ion-card-title>Pergunta 1</ion-card-title>
-            <ion-card-subtitle>Essa pergunta vale R$100 pra sua carteira de investimento</ion-card-subtitle>
+            <ion-card-title>Gostou do vídeo?</ion-card-title>
+            <ion-card-subtitle>A pergunta abaixo vale R$300 pra sua carteira de investimento</ion-card-subtitle>
         </ion-card-header>
       
         <ion-card-content>
-          Keep close to Nature's heart... and break clear away, once in awhile,
-          and climb a mountain or spend a week in the woods. Wash your spirit clean.
+            O Tesouro Direto é um tipo de título público caracterizado como de renda fixa. Por ser um tipo de investimento deste tipo, ele é voltado para pessoas que desejam ter mais segurança em seus investimentos. Mas, o que é renda fixa?
         </ion-card-content>
           
-        <ion-item href="#" class="activated">
-          <ion-label>a) Lorem ipsum</ion-label>
+        <ion-item (click)="showAlert('Essa não é a resposta correta :(', 'Poxa...')">
+          <ion-label>A - Investimentos sem data de vencimento</ion-label>
         </ion-item>
       
-        <ion-item href="#">
-          <ion-label>b) Lorem ipsum</ion-label>
+        <ion-item (click)="showAlert('Essa não é a resposta correta :(', 'Poxa...')">
+          <ion-label>B - Investimentos que possuem uma data de vencimento sem indexadores.</ion-label>
         </ion-item>
       
-        <ion-item href="#" class="activated">
-          <ion-label>c) Lorem ipsum</ion-label>
+        <ion-item class="activated" (click)="showAlert('Você acertou e ganhou R$300', 'Parabéns!')">
+          <ion-label>C - Investimentos que possuem uma data de vencimento e um indexador de rentabilidade, sendo dois desses indexadores a taxa selic e a inflação.</ion-label>
+        </ion-item>
+
+        <ion-item (click)="showAlert('Essa não é a resposta correta :(', 'Poxa...')">
+          <ion-label>D - Ganho mensal, como se fosse um salário</ion-label>
+        </ion-item>
+
+        <ion-item (click)="showAlert('Essa não é a resposta correta :(', 'Poxa...')">
+          <ion-label>E - Investimentos com uma renda que muda todo mês de acordo com a inflação e sem um vencimento fixo</ion-label>
         </ion-item>
     
       </ion-card>
@@ -57,54 +60,113 @@
     <ion-slide>
         <ion-card>
             <ion-card-header>
-                <ion-card-title>Vamos aprender mais?</ion-card-title>
-                <ion-card-subtitle>Veja o vídeo e aprenda mais de uma forma bem fácil e divertida</ion-card-subtitle>
-            </ion-card-header>
-          
-            <ion-card-content>
-              Keep close to Nature's heart... and break clear away, once in awhile,
-              and climb a mountain or spend a week in the woods. Wash your spirit clean.
+              <ion-card-title>Veja como é simples!</ion-card-title>
+              <ion-card-subtitle>Nessa leitura rápida você vai entender os princípios do Tesouro Direto.</ion-card-subtitle>
+            </ion-card-header>       
+            <ion-card-content>            
+              <ion-img src="../../assets/img/tesouro-direto.jpg"></ion-img>
+              <br>
+              <p>Emprestar dinheiro para o governo e receber juros por isso. Sim, isso é possível caso você decida investir no tesouro direto. Mas na prática, como isso funciona?</p><br>  
+              <p>O Tesouro Nacional nada mais é do que a aplicação em Títulos Públicos e esses títulos são opções de investimento de renda fixa usados para captar recurso para pagar dívida pública e financiar atividades do Governo.  E primeiramente o que você deve fazer para poder investir é se cadastrar em uma instituição financeira. O seu banco pode investir o seu dinheiro, mas ele irá cobrar juros altos por isso. Então, a melhor maneira de você investir sem ter que pagar por juros altíssimos é realizar o cadastro  Instituições financeiras focadas em investimentos, também conhecidas como corretoras de valores. <a href="http://www3.tesouro.gov.br/tesouro_direto/consulta_titulos_novosite/consulta_ranking.asp?op=1"> Neste link você encontra todas as instituições habilitadas a aplicar no Tesouro Nacional.</a></p><br>
+              <p>É bem simples se cadastrar numa corretora. Mais fácil e rápido do que abrir uma conta no banco.  Antes de investir em um título é necessário definir um objetivo primeiro: Não adianta comprar um título com vencimento em 2050 se você quer comprar um carro daqui a 3 anos, certo? Então observe com cautela seus objetivos antes de partir para a compra.  Conheça os riscos.  “Eita, mas se é renda fixa como pode ter riscos?” Você vai ver na tabela de títulos que todos têm uma data de vencimento. Ou seja, você tem que deixar o dinheiro lá até esse dia. A sua rentabilidade e ganhos com o tesouro estarão garantidas se você levar este investimento até lá. Mas quem não se planejar direito e quiser pegar o dinheiro de volta antes da data do vencimento pode perder dinheiro nos casos do TESOURO IPCA E TESOURO PREFIXADO.</p>
             </ion-card-content>
           </ion-card>
       </ion-slide>
-    <ion-slide>
-      <ion-card>
+      <ion-slide>
+        <ion-card>
+            <ion-card-header>
+                <ion-card-title>Vale a pena investir no Tesouro Direto?</ion-card-title>
+                <ion-card-subtitle>Descubra vendo o vídeo abaixo</ion-card-subtitle>
+            </ion-card-header>
+          
+            <ion-card-content>
+                <iframe width="100%" height="150" src="https://www.youtube.com/embed/Sygwha1vLAI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </ion-card-content>
+          </ion-card>
+      </ion-slide>
+      <ion-slide class="slide">
+        <ion-card>
           <ion-card-header>
-              <ion-card-title>Na prática</ion-card-title>
-              <ion-card-subtitle>Vamos simular um investimento no Tesouro Direto?</ion-card-subtitle>
+              <ion-card-title>Vamos investir?</ion-card-title>
+              <ion-card-subtitle>Essa pergunta vale R$150 pra sua carteira de investimento</ion-card-subtitle>
           </ion-card-header>
         
           <ion-card-content>
-            Keep close to Nature's heart... and break clear away, once in awhile,
-            and climb a mountain or spend a week in the woods. Wash your spirit clean.
+              Qual o valor mínimo para começar a investir no Tesouro Direto?
           </ion-card-content>
+            
+          <ion-item class="activated" (click)="showAlert('Você acertou e ganhou R$150', 'Parabéns!')">
+            <ion-label>A - R$ 30,00</ion-label>
+          </ion-item>
+        
+          <ion-item (click)="showAlert('Essa não é a resposta correta :(', 'Poxa...')">
+            <ion-label>B - R$ 5.000,00</ion-label>
+          </ion-item>
+        
+          <ion-item (click)="showAlert('Essa não é a resposta correta :(', 'Poxa...')">
+            <ion-label>C - Posso começar a investir com qualquer valor </ion-label>
+          </ion-item>
+  
+          <ion-item (click)="showAlert('Essa não é a resposta correta :(', 'Poxa...')">
+            <ion-label>D - R$ 130,00</ion-label>
+          </ion-item>
+  
+          <ion-item (click)="showAlert('Essa não é a resposta correta :(', 'Poxa...')">
+            <ion-label>E - R$ 1.000,00</ion-label>
+          </ion-item>
+      
         </ion-card>
-    </ion-slide>
-    <ion-slide class="slide">
-      <ion-card>
-        <ion-card-header>
-            <ion-card-title>Pergunta 2</ion-card-title>
-            <ion-card-subtitle>Essa pergunta vale R$200 pra sua carteira de investimento</ion-card-subtitle>
-        </ion-card-header>
-      
-        <ion-card-content>
-          Keep close to Nature's heart... and break clear away, once in awhile,
-          and climb a mountain or spend a week in the woods. Wash your spirit clean.
-        </ion-card-content>
+      </ion-slide>
+
+
+
+      <ion-slide>
+        <ion-card>
+            <ion-card-header>
+                <ion-card-title>Você sabe o que é Tesouro Selic?</ion-card-title>
+                <ion-card-subtitle>É uma das modalidades de investimento no Tesouro Direto. Aprenda mais no vídeo abaixo!</ion-card-subtitle>
+            </ion-card-header>
           
-        <ion-item href="#" class="activated">
-          <ion-label>a) Lorem ipsum</ion-label>
-        </ion-item>
-      
-        <ion-item href="#">
-          <ion-label>b) Lorem ipsum</ion-label>
-        </ion-item>
-      
-        <ion-item href="#" class="activated">
-          <ion-label>c) Lorem ipsum</ion-label>
-        </ion-item>
-    
-      </ion-card>
-    </ion-slide>
+            <ion-card-content>
+                <iframe width="100%" height="150" src="https://www.youtube.com/embed/kXplWeCIPp8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </ion-card-content>
+          </ion-card>
+      </ion-slide>
+      <ion-slide class="slide">
+          <ion-card>
+            <ion-card-header>
+                <ion-card-title>Você tá se tornando um especialista!</ion-card-title>
+                <ion-card-subtitle>Responda a pergunta abaixo e acumule mais R$250 pra sua carteira de investimento</ion-card-subtitle>
+            </ion-card-header>
+          
+            <ion-card-content>
+                Tesouro Selic é o título de investimento contído no tesouro nacional mais indicado para quem quer começar a investir, pois independentemente da variação da taxa selic ou de quando você for resgatar o dinheiro, o valor do título sempre aumenta. Essa título é indicado para quem deseja ter um retorno de:
+            </ion-card-content>
+              
+            <ion-item class="activated" (click)="showAlert('Você acertou e ganhou R$250', 'Parabéns!')">
+              <ion-label>A - Curto Prazo</ion-label>
+            </ion-item>
+          
+            <ion-item (click)="showAlert('Essa não é a resposta correta :(', 'Poxa...')">
+              <ion-label>B - Médio Prazo</ion-label>
+            </ion-item>
+          
+            <ion-item (click)="showAlert('Essa não é a resposta correta :(', 'Poxa...')">
+              <ion-label>C - Longo Prazo</ion-label>
+            </ion-item>
+        
+          </ion-card>
+        </ion-slide>
+        <ion-slide>
+            <ion-card>
+                <ion-card-header>
+                  <ion-card-title>Parabéns!</ion-card-title>
+                  <ion-card-subtitle>Você concluiu a trilha de Tesouro Direto!</ion-card-subtitle>
+                </ion-card-header>       
+                <ion-card-content>            
+                  <ion-img src="../../assets/img/win.png"></ion-img>
+                </ion-card-content>
+            </ion-card>
+        </ion-slide> 
 	</ion-slides>
 </ion-content>
